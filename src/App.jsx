@@ -4,32 +4,24 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [color, setColor] = useState("orange")
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div 
+      className="main-div" 
+      style={{ backgroundColor: color }}
+    >
+      <div className="btnGroup">
+        <button className="colorBtn" onClick={()=> setColor(prevColor => "red")}>Red</button>
+        <button className="colorBtn" onClick={()=> setColor(prevColor => "black")}>Black</button>
+        <button className="colorBtn" onClick={()=> setColor(prevColor => "orange")}>Orange</button>
+        <button className="colorBtn" onClick={()=> setColor(prevColor => "olive")}>Olive</button>
+        <button className="colorBtn" onClick={()=> setColor(prevColor => "blue")}>Blue</button>
+        <button className="colorBtn"onClick={()=> setColor(prevColor => "pink")}> Pink</button>
+        <button className="colorBtn" onClick={()=> setColor(prevColor => "green")}>Green</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
-export default App
+export default App;
